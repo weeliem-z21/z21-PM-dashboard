@@ -8,6 +8,20 @@
 :root{--bg:#0d1117;--sf:#161b22;--sf2:#21262d;--bd:#30363d;--tx:#c9d1d9;--muted:#8b949e;--blue:#58a6ff;--red:#f85149;--amber:#d29922;--green:#3fb950;--purple:#bc8cff;--teal:#39d353;--pink:#f778ba;--orange:#ffa657}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);font-size:14px;min-height:100vh}
+
+/* ── Login ── */
+#loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:40px;width:100%;max-width:380px;text-align:center}
+.login-logo{display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.login-sub{font-size:12px;color:var(--muted);margin-bottom:32px}
+.login-box input{width:100%;padding:11px 14px;border-radius:8px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:14px;outline:none;text-align:center;letter-spacing:2px;margin-bottom:12px}
+.login-box input:focus{border-color:var(--blue)}
+.login-box button{width:100%;padding:11px;border-radius:8px;border:none;background:var(--blue);color:#000;font-weight:700;font-size:14px;cursor:pointer}
+.login-box button:hover{opacity:.85}
+.login-err{font-size:12px;color:var(--red);margin-top:10px;min-height:18px}
+
+/* ── App ── */
+#app{display:none}
 .hdr{padding:14px 24px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg);z-index:10}
 .hdr h1{font-size:15px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
 .hdr-r{display:flex;align-items:center;gap:10px}
@@ -21,25 +35,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn.del{background:transparent;border-color:rgba(248,81,73,.4);color:var(--red);padding:4px 10px}
 .btn.del:hover{background:rgba(248,81,73,.1)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
-.main{padding:20px 24px;max-width:1240px;margin:0 auto}
+.main{padding:20px 24px;max-width:1280px;margin:0 auto}
 
-/* API Key bar */
-.apibar{background:var(--sf);border:1px solid var(--bd);border-radius:10px;margin-bottom:18px;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.apibar label{font-size:12px;color:var(--muted);white-space:nowrap;font-weight:500}
-.apibar input{flex:1;min-width:260px;padding:7px 10px;border-radius:6px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:13px;outline:none;font-family:monospace}
-.apibar input:focus{border-color:var(--blue)}
-.apibar input::placeholder{color:var(--muted);font-family:inherit}
-.apibar .hint{font-size:11px;color:var(--muted);flex-basis:100%}
-.apibar .hint a{color:var(--blue);text-decoration:none}
-.apibar .hint a:hover{text-decoration:underline}
-.key-ok{font-size:11px;color:var(--green);white-space:nowrap}
-.key-bad{font-size:11px;color:var(--red);white-space:nowrap}
-
-/* Manager */
+/* ── Manager ── */
 .mgr{background:var(--sf);border:1px solid var(--bd);border-radius:10px;margin-bottom:18px;overflow:hidden}
 .mgr-head{padding:11px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;font-size:13px;font-weight:600}
 .mgr-head:hover{background:var(--sf2)}
 .mgr-body{padding:16px;border-top:1px solid var(--bd)}
+.apibar{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.apibar label{font-size:12px;color:var(--muted);white-space:nowrap}
+.apibar input{flex:1;min-width:220px;padding:7px 10px;border-radius:6px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:13px;outline:none;font-family:monospace}
+.apibar input:focus{border-color:var(--blue)}
+.apibar .hint{font-size:11px;color:var(--muted)}
+.key-ok{font-size:11px;color:var(--green);white-space:nowrap}
 .srow{display:grid;grid-template-columns:140px 1fr 150px 130px auto auto;gap:8px;align-items:center;margin-bottom:8px}
 .srow input,.srow select{padding:7px 10px;border-radius:6px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:13px;outline:none;width:100%}
 .srow input:focus,.srow select:focus{border-color:var(--blue)}
@@ -55,29 +63,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stag.cached{background:rgba(57,211,83,.08);color:#4a9a55;border:1px solid rgba(57,211,83,.2)}
 .mgr-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid var(--bd)}
 
-/* KPI */
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+/* ── KPI ── */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
 .kpi{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.kpi.risk-kpi{border-color:rgba(248,81,73,.35);background:rgba(248,81,73,.04)}
 .kpi-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
 .kpi-v{font-size:30px;font-weight:800;line-height:1}
-.kpi-v.blue{color:var(--blue)}.kpi-v.red{color:var(--red)}.kpi-v.amber{color:var(--amber)}.kpi-v.green{color:var(--green)}
+.kpi-v.blue{color:var(--blue)}.kpi-v.red{color:var(--red)}.kpi-v.amber{color:var(--amber)}.kpi-v.green{color:var(--green)}.kpi-v.orange{color:var(--orange)}
 
-/* Filters */
+/* ── Filters ── */
 .filter-section{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:12px 16px;margin-bottom:16px;display:flex;flex-direction:column;gap:10px}
 .frow{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .flabel{font-size:11px;color:var(--muted);min-width:64px;font-weight:500;flex-shrink:0}
 .fb{padding:4px 12px;border-radius:20px;border:1px solid var(--bd);background:transparent;color:var(--muted);cursor:pointer;font-size:12px;transition:all .15s}
 .fb:hover{color:var(--tx);border-color:var(--tx)}
-.fb.on{border-color:currentColor;font-weight:600}
-.fb.on.c-all{background:rgba(88,166,255,.15);color:var(--blue);border-color:var(--blue)}
-.fb.on.c-wl{background:rgba(210,153,34,.15);color:var(--amber);border-color:var(--amber)}
-.fb.on.c-mi{background:rgba(247,120,186,.15);color:var(--pink);border-color:var(--pink)}
-.fb.on.c-ch{background:rgba(57,211,83,.15);color:var(--teal);border-color:var(--teal)}
-.fselect{padding:5px 10px;border-radius:20px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:12px;outline:none;cursor:pointer;min-width:180px}
-.fselect:focus{border-color:var(--blue)}
+.fb.on.c-all{background:rgba(88,166,255,.15);color:var(--blue);border-color:var(--blue);font-weight:600}
+.fb.on.c-wl{background:rgba(210,153,34,.15);color:var(--amber);border-color:var(--amber);font-weight:600}
+.fb.on.c-mi{background:rgba(247,120,186,.15);color:var(--pink);border-color:var(--pink);font-weight:600}
+.fb.on.c-ch{background:rgba(57,211,83,.15);color:var(--teal);border-color:var(--teal);font-weight:600}
+.fb.on.c-risk{background:rgba(248,81,73,.15);color:var(--red);border-color:var(--red);font-weight:600}
+.fselect{padding:5px 10px;border-radius:20px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:12px;outline:none;cursor:pointer;min-width:190px}
 .fselect option{background:var(--sf2)}
 
-/* Groups */
+/* ── Groups ── */
 .grp{margin-bottom:22px}
 .grp-hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .grp-date{font-size:13px;font-weight:700}
@@ -89,12 +97,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .grp-ct{font-size:11px;color:var(--muted)}
 .grp-line{flex:1;height:1px;background:var(--bd)}
 
-/* Task Card */
+/* ── Task Card ── */
 .card{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:11px 14px;margin-bottom:6px;display:grid;grid-template-columns:8px 1fr auto auto;gap:10px;align-items:center;transition:border-color .15s}
 .card:hover{border-color:rgba(88,166,255,.4)}
 .card.ov-card{border-left:3px solid var(--red)}
 .card.ip-card{border-left:3px solid var(--blue)}
 .card.done-card{opacity:.45}
+.card.risk-card{border-color:rgba(248,81,73,.3);background:rgba(248,81,73,.03)}
+.card.risk-card.ov-card{border-left:3px solid var(--red)}
 .pdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .tinfo{min-width:0}
 .tname{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -113,6 +123,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tag.pt-rd{background:rgba(188,140,255,.1);color:var(--purple)}
 .tag.pt-mg{background:rgba(57,211,83,.1);color:var(--teal)}
 .tag.pt-mt{background:rgba(139,148,158,.1);color:var(--muted)}
+.tag.risk{background:rgba(248,81,73,.15);color:var(--red);font-weight:700}
 .asgn{font-size:11px;padding:3px 8px;border-radius:4px;background:var(--sf2);color:var(--muted);white-space:nowrap}
 .sbadge{font-size:10px;padding:3px 9px;border-radius:10px;font-weight:600;white-space:nowrap}
 .sbadge.ov{background:rgba(248,81,73,.15);color:var(--red)}
@@ -126,89 +137,124 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </style>
 </head>
 <body>
-<div class="hdr">
-  <h1>
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-    Z21 Team Dashboard
-  </h1>
-  <div class="hdr-r">
-    <span class="ts" id="ts">Not loaded</span>
-    <button class="btn" onclick="toggleMgr()">⚙ Manage Sheets</button>
-    <button class="btn pri" id="rfBtn" onclick="loadAll()">↻ Load</button>
+
+<!-- Login -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+      Z21 Team Dashboard
+    </div>
+    <div class="login-sub">Enter password to continue</div>
+    <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()">Sign In</button>
+    <div class="login-err" id="loginErr"></div>
   </div>
 </div>
 
-<div class="main">
-
-  <!-- API Key -->
-  <div class="apibar">
-    <label>Google API Key</label>
-    <input type="password" id="apiKeyInput" placeholder="AIza…" oninput="onKeyInput()" autocomplete="off">
-    <span id="keyStatus"></span>
-    <span class="hint">
-      Need a key? <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Google Cloud Console</a> → Create credentials → API key → Enable <strong>Google Sheets API</strong> + <strong>Drive API</strong>. The key is stored in memory only and never leaves your browser.
-    </span>
+<!-- App -->
+<div id="app">
+  <div class="hdr">
+    <h1>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+      Z21 Team Dashboard
+    </h1>
+    <div class="hdr-r">
+      <span class="ts" id="ts">Not loaded</span>
+      <button class="btn" onclick="toggleMgr()">⚙ Manage Sheets</button>
+      <button class="btn pri" id="rfBtn" onclick="loadAll()">↻ Load</button>
+    </div>
   </div>
 
-  <!-- Sheet Manager -->
-  <div class="mgr" id="mgr">
-    <div class="mgr-head" onclick="toggleMgr()">
-      <span>📋 Project Sheets</span>
-      <span id="mgrChev">▲</span>
-    </div>
-    <div class="mgr-body" id="mgrBody">
-      <div class="col-labels">
-        <span>Project name</span><span>Google Sheet URL</span><span>Project Type</span><span>Project Manager</span><span></span><span></span>
+  <div class="main">
+    <div class="mgr" id="mgr">
+      <div class="mgr-head" onclick="toggleMgr()">
+        <span>📋 Project Sheets</span>
+        <span id="mgrChev">▲</span>
       </div>
-      <div id="sRows"></div>
-      <button class="btn ghost" onclick="addRow()">+ Add project sheet</button>
-      <div class="mgr-foot">
-        <button class="btn" onclick="toggleMgr()">Close</button>
-        <button class="btn pri" onclick="loadAll()">Load Dashboard</button>
+      <div class="mgr-body" id="mgrBody">
+        <div class="apibar">
+          <label>Google API Key</label>
+          <input type="password" id="apiKeyInput" placeholder="AIza…" oninput="onKeyInput()" autocomplete="off">
+          <span id="keyStatus"></span>
+          <span class="hint">Enable Google Sheets API + Drive API in Google Cloud Console</span>
+        </div>
+        <div class="col-labels">
+          <span>Project name</span><span>Google Sheet URL</span><span>Project Type</span><span>PM</span><span></span><span></span>
+        </div>
+        <div id="sRows"></div>
+        <button class="btn ghost" onclick="addRow()">+ Add project sheet</button>
+        <div class="mgr-foot">
+          <button class="btn" onclick="toggleMgr()">Close</button>
+          <button class="btn pri" onclick="loadAll()">Load Dashboard</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- KPIs -->
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Total Tasks</div><div class="kpi-v blue" id="kTotal">—</div></div>
-    <div class="kpi"><div class="kpi-l">Overdue</div><div class="kpi-v red" id="kOv">—</div></div>
-    <div class="kpi"><div class="kpi-l">Due Today</div><div class="kpi-v amber" id="kTd">—</div></div>
-    <div class="kpi"><div class="kpi-l">Completed</div><div class="kpi-v green" id="kDone">—</div></div>
-  </div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-l">Total Tasks</div><div class="kpi-v blue" id="kTotal">—</div></div>
+      <div class="kpi"><div class="kpi-l">Overdue</div><div class="kpi-v red" id="kOv">—</div></div>
+      <div class="kpi"><div class="kpi-l">Due Today</div><div class="kpi-v amber" id="kTd">—</div></div>
+      <div class="kpi"><div class="kpi-l">Due This Week</div><div class="kpi-v blue" id="kWeek">—</div></div>
+      <div class="kpi"><div class="kpi-l">Completed</div><div class="kpi-v green" id="kDone">—</div></div>
 
-  <!-- Filters -->
-  <div class="filter-section">
-    <div class="frow">
-      <span class="flabel">PM</span>
-      <button class="fb on c-all" data-pm="all" onclick="setPM(this)">All PMs</button>
-      <button class="fb" data-pm="Weeliem" onclick="setPM(this)">👤 Weeliem</button>
-      <button class="fb" data-pm="Mimi" onclick="setPM(this)">👤 Mimi</button>
-      <button class="fb" data-pm="Charmaine" onclick="setPM(this)">👤 Charmaine</button>
-      <button class="fb" data-pm="__none__" onclick="setPM(this)">Unassigned</button>
     </div>
-    <div class="frow">
-      <span class="flabel">Status</span>
-      <button class="fb on c-all" data-f="all" onclick="setStatus(this)">All</button>
-      <button class="fb" data-f="overdue" onclick="setStatus(this)">Overdue only</button>
-      <button class="fb" data-f="pending" onclick="setStatus(this)">Hide completed</button>
-    </div>
-    <div class="frow">
-      <span class="flabel">Project</span>
-      <select class="fselect" id="projSelect" onchange="setProject(this.value)">
-        <option value="all">All Projects</option>
-      </select>
-    </div>
-    <div class="frow" id="assigneeRow">
-      <span class="flabel">Assignee</span>
-      <button class="fb on c-all" data-a="all" onclick="setAssignee(this)">All</button>
-    </div>
-  </div>
 
-  <div id="view"></div>
+    <div class="filter-section">
+      <div class="frow">
+        <span class="flabel">PM</span>
+        <button class="fb on c-all" data-pm="all" onclick="setPM(this)">All PMs</button>
+        <button class="fb" data-pm="Weeliem" onclick="setPM(this)">👤 Weeliem</button>
+        <button class="fb" data-pm="Mimi" onclick="setPM(this)">👤 Mimi</button>
+        <button class="fb" data-pm="Charmaine" onclick="setPM(this)">👤 Charmaine</button>
+        <button class="fb" data-pm="__none__" onclick="setPM(this)">Unassigned</button>
+      </div>
+      <div class="frow">
+        <span class="flabel">Status</span>
+        <button class="fb on c-all" data-f="all" onclick="setStatus(this)">All</button>
+        <button class="fb" data-f="overdue" onclick="setStatus(this)">Overdue only</button>
+        <button class="fb" data-f="today" onclick="setStatus(this)">Due today</button>
+        <button class="fb" data-f="week" onclick="setStatus(this)">Due this week</button>
+        <button class="fb" data-f="pending" onclick="setStatus(this)">Hide completed</button>
+
+      </div>
+      <div class="frow">
+        <span class="flabel">Project</span>
+        <select class="fselect" id="projSelect" onchange="setProject(this.value)">
+          <option value="all">All Projects</option>
+        </select>
+      </div>
+      <div class="frow" id="assigneeRow">
+        <span class="flabel">Assignee</span>
+        <button class="fb on c-all" onclick="setAssignee(this)" data-a="all">All</button>
+      </div>
+    </div>
+
+    <div id="view"></div>
+  </div>
 </div>
 
 <script>
+/* ── Auth ── */
+const STORED='ZWpJeGMzUjFaR2x2';
+async function doLogin(){
+  const val=document.getElementById('pwInput').value;
+  const err=document.getElementById('loginErr');
+  if(btoa(btoa(val))===STORED){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('app').style.display='block';
+    err.textContent='';
+    const savedKey=sessionStorage.getItem('z21_key');
+    if(savedKey){document.getElementById('apiKeyInput').value=savedKey;apiKey=savedKey;document.getElementById('keyStatus').textContent='Key set ✓';document.getElementById('keyStatus').className='key-ok';}
+    const savedSheets=sessionStorage.getItem('z21_sheets');
+    if(savedSheets){try{sheets=JSON.parse(savedSheets);renderRows();}catch(e){}}
+  }else{
+    err.textContent='Incorrect password';
+    document.getElementById('pwInput').value='';
+  }
+}
+
+/* ── Constants ── */
 const PMs=['','Weeliem','Mimi','Charmaine'];
 const PM_CLS={Weeliem:'pm-wl',Mimi:'pm-mi',Charmaine:'pm-ch'};
 const PROJECT_TYPES=[
@@ -222,10 +268,10 @@ const PROJECT_TYPES=[
 ];
 const PT_CLS={'Website Build':'pt-wb','Cloning':'pt-cl','Redesign':'pt-rd','Migration':'pt-mg','Maintenance':'pt-mt'};
 
+
 let apiKey='';
 let sheets=[{uid:uid(),name:'',url:'',pm:'',ptype:'',st:'idle'}];
-let tasks=[];
-let cache={};
+let tasks=[],cache={};
 let fStatus='all',fAssign='all',fPM='all',fProject='all';
 let mgrOpen=true;
 
@@ -235,12 +281,12 @@ function h(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').re
 
 function onKeyInput(){
   apiKey=document.getElementById('apiKeyInput').value.trim();
-  const el=document.getElementById('keyStatus');
-  el.textContent=apiKey?'Key set ✓':'';
-  el.className=apiKey?'key-ok':'';
+  document.getElementById('keyStatus').textContent=apiKey?'Key set ✓':'';
+  document.getElementById('keyStatus').className=apiKey?'key-ok':'';
+  sessionStorage.setItem('z21_key',apiKey);
 }
 
-/* ── Date helpers ── */
+/* ── Date / status ── */
 function parseDate(s){
   if(!s||typeof s!=='string')return null;
   s=s.trim();if(!s||s.includes('#'))return null;
@@ -250,8 +296,6 @@ function parseDate(s){
 }
 function midnight(d){const x=new Date(d);x.setHours(0,0,0,0);return x}
 function today(){return midnight(new Date())}
-
-/* ── Status logic ── */
 function isOv(t){
   if(!t.parsedDate)return(t.status||'').toLowerCase().includes('overdue');
   if((t.status||'').toLowerCase().includes('complet'))return false;
@@ -266,19 +310,11 @@ function statusInfo(t){
 }
 function cardClass(t){
   const{cls}=statusInfo(t);
-  return cls==='ov'?'card ov-card':cls==='ip'?'card ip-card':cls==='done'?'card done-card':'card';
+  const base=cls==='ov'?'card ov-card':cls==='ip'?'card ip-card':cls==='done'?'card done-card':'card';
+  return t.risk==='high'?base+' risk-card':base;
 }
-function phaseClass(p){
-  if(!p)return'';const lp=p.toLowerCase();
-  if(lp.includes('ui')||lp.includes('ux'))return'p-ui';
-  if(lp.includes('dev'))return'p-dev';
-  if(lp.includes('data'))return'p-data';
-  if(lp.includes('pay'))return'p-pay';
-  return'';
-}
-function phaseColor(p){
-  return{'p-ui':'#58a6ff','p-dev':'#3fb950','p-data':'#d29922','p-pay':'#f85149'}[phaseClass(p)]||'#8b949e';
-}
+function phaseClass(p){if(!p)return'';const l=p.toLowerCase();return l.includes('ui')||l.includes('ux')?'p-ui':l.includes('dev')?'p-dev':l.includes('data')?'p-data':l.includes('pay')?'p-pay':''}
+function phaseColor(p){return{'p-ui':'#58a6ff','p-dev':'#3fb950','p-data':'#d29922','p-pay':'#f85149'}[phaseClass(p)]||'#8b949e'}
 
 /* ── Google Sheets API v4 ── */
 async function gFetch(url){
@@ -286,76 +322,50 @@ async function gFetch(url){
   if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e?.error?.message||`HTTP ${r.status}`)}
   return r.json();
 }
-
 async function getModifiedTime(fileId){
-  try{
-    const d=await gFetch(`https://www.googleapis.com/drive/v3/files/${fileId}?fields=modifiedTime&key=${apiKey}`);
-    return d.modifiedTime||null;
-  }catch{return null}
+  try{const d=await gFetch(`https://www.googleapis.com/drive/v3/files/${fileId}?fields=modifiedTime&key=${apiKey}`);return d.modifiedTime||null}catch{return null}
 }
-
 async function getTabNames(fileId){
   const d=await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}?fields=sheets.properties.title&key=${apiKey}`);
   return(d.sheets||[]).map(s=>s.properties.title);
 }
-
 async function getTabRows(fileId,tab){
-  const range=encodeURIComponent(`'${tab}'`);
-  const d=await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}/values/${range}?key=${apiKey}`);
+  const d=await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}/values/${encodeURIComponent("'"+tab+"'")}?key=${apiKey}`);
   return d.values||[];
 }
-
 function parseRows(rows,tab){
-  // Find header row — scan first 15 rows for one containing "Items"
   let hi=-1;
-  for(let i=0;i<Math.min(15,rows.length);i++){
-    if(rows[i].some(c=>String(c).trim()==='Items')){hi=i;break}
-  }
+  for(let i=0;i<Math.min(15,rows.length);i++){if(rows[i].some(c=>String(c).trim()==='Items')){hi=i;break}}
   if(hi===-1)return[];
   const hdrs=rows[hi].map(c=>String(c).trim().toLowerCase());
-  const idx=k=>hdrs.findIndex(h=>h.includes(k));
-  const iPhase=idx('phase'),iTask=idx('items');
-  // "deliver by (new)" — prefer exact match, fallback to second "deliver by" col
+  const ci=k=>hdrs.findIndex(h=>h.includes(k));
+  const iPhase=ci('phase'),iTask=ci('items');
   let iDue=hdrs.findIndex(h=>h==='deliver by (new)');
-  if(iDue===-1)iDue=hdrs.lastIndexOf(hdrs.find(h=>h.includes('deliver by'))||'');
-  const iAssign=idx('assigned'),iStatus=idx('status');
+  if(iDue===-1)iDue=hdrs.lastIndexOf(hdrs.find(h=>h.startsWith('deliver by'))||'__');
+  const iAssign=ci('assigned'),iStatus=ci('status');
   if(iTask===-1)return[];
   const out=[];
   for(let i=hi+1;i<rows.length;i++){
     const r=rows[i];
     const task=String(r[iTask]||'').trim();
     if(!task||task==='Items')continue;
-    out.push({
-      tab,
-      phase:String(r[iPhase]||'').trim(),
-      task,
-      dueDate:String(r[iDue]!=null?r[iDue]:'').trim(),
+    out.push({tab,phase:String(r[iPhase]||'').trim(),task,
+      dueDate:String(iDue>=0&&r[iDue]!=null?r[iDue]:'').trim(),
       assignedTo:String(r[iAssign]||'').trim(),
-      status:String(r[iStatus]||'').trim()
-    });
+      status:String(r[iStatus]||'').trim()});
   }
   return out;
 }
-
 async function fetchSheet(s){
-  const fid=extractId(s.url);
-  if(!fid)throw new Error('Invalid URL');
+  const fid=extractId(s.url);if(!fid)throw new Error('Invalid URL');
   const tabs=await getTabNames(fid);
-  const results=await Promise.all(tabs.map(async tab=>{
-    try{const rows=await getTabRows(fid,tab);return parseRows(rows,tab)}
-    catch{return[]}
-  }));
+  const results=await Promise.all(tabs.map(async tab=>{try{return parseRows(await getTabRows(fid,tab),tab)}catch{return[]}}));
   return results.flat();
 }
 
 /* ── Load ── */
 async function loadAll(){
-  if(!apiKey){
-    document.getElementById('apiKeyInput').focus();
-    document.getElementById('keyStatus').textContent='⚠ Enter API key first';
-    document.getElementById('keyStatus').className='key-bad';
-    return;
-  }
+  if(!apiKey){document.getElementById('apiKeyInput').focus();return}
   const valid=sheets.filter(s=>s.url.trim());
   if(!valid.length){if(!mgrOpen)toggleMgr();return}
   const btn=document.getElementById('rfBtn');
@@ -364,23 +374,21 @@ async function loadAll(){
   renderRows();
   await Promise.allSettled(valid.map(async s=>{
     try{
-      const fid=extractId(s.url);
-      if(!fid)throw new Error('Invalid URL');
+      const fid=extractId(s.url);if(!fid)throw new Error('Invalid URL');
       const modTime=await getModifiedTime(fid);
       if(modTime&&cache[s.uid]&&cache[s.uid].modifiedTime===modTime){
-        tasks.push(...cache[s.uid].tasks);
-        s.st='cached';
+        tasks.push(...cache[s.uid].tasks);s.st='cached';
       }else{
         const raw=await fetchSheet(s);
         const mapped=raw.map(t=>({...t,project:s.name||fid,pm:s.pm,ptype:s.ptype,_uid:s.uid,parsedDate:parseDate(t.dueDate)}));
         cache[s.uid]={modifiedTime:modTime,tasks:mapped};
-        tasks.push(...mapped);
-        s.st='ok';
+        tasks.push(...mapped);s.st='ok';
       }
     }catch(e){s.st='err';console.error(s.name||s.url,e.message)}
     renderRows();
   }));
   btn.disabled=false;btn.textContent='↻ Refresh';
+  sessionStorage.setItem('z21_sheets',JSON.stringify(sheets.map(s=>({...s,st:'idle'}))));
   refresh();
   if(tasks.length&&mgrOpen)toggleMgr();
 }
@@ -395,6 +403,7 @@ function renderCard(t){
       <div class="tname">${h(t.task)}</div>
       <div class="tmeta">
         <span class="tag proj">${h(t.project)}</span>
+        ${t.risk==='high'?'<span class="tag risk">⚠ High Risk</span>':''}
         ${t.ptype?`<span class="tag ${PT_CLS[t.ptype]||''}">${h(t.ptype)}</span>`:''}
         ${t.pm?`<span class="tag ${PM_CLS[t.pm]||''}">${h(t.pm)}</span>`:''}
         ${t.phase?`<span class="tag ${phaseClass(t.phase)}">${h(t.phase)}</span>`:''}
@@ -409,10 +418,7 @@ function renderCard(t){
 
 function groupTasks(arr){
   const g={};
-  for(const t of arr){
-    const k=isOv(t)?'__ov__':!t.parsedDate?'__nd__':midnight(t.parsedDate).getTime().toString();
-    (g[k]=g[k]||[]).push(t);
-  }
+  for(const t of arr){const k=isOv(t)?'__ov__':!t.parsedDate?'__nd__':midnight(t.parsedDate).getTime().toString();(g[k]=g[k]||[]).push(t)}
   return Object.entries(g).sort(([a],[b])=>{
     if(a==='__ov__')return-1;if(b==='__ov__')return 1;
     if(a==='__nd__')return 1;if(b==='__nd__')return-1;
@@ -422,31 +428,36 @@ function groupTasks(arr){
 function grpMeta(k){
   if(k==='__ov__')return{label:'Overdue',badge:'ov',sub:'Past due'};
   if(k==='__nd__')return{label:'No Date Set',badge:'nd',sub:'Unscheduled'};
-  const d=new Date(parseInt(k));
-  const diff=Math.round((d.getTime()-today().getTime())/864e5);
-  const short=d.toLocaleDateString('en-GB',{day:'numeric',month:'long'});
-  const long=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-  if(diff===0)return{label:`Today — ${short}`,badge:'td',sub:'Today'};
-  if(diff===1)return{label:`Tomorrow — ${short}`,badge:'up',sub:'+1 day'};
-  return{label:long,badge:'up',sub:`+${diff}d`};
+  const d=new Date(parseInt(k)),diff=Math.round((d.getTime()-today().getTime())/864e5);
+  const s=d.toLocaleDateString('en-GB',{day:'numeric',month:'long'});
+  const l=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  if(diff===0)return{label:`Today — ${s}`,badge:'td',sub:'Today'};
+  if(diff===1)return{label:`Tomorrow — ${s}`,badge:'up',sub:'+1 day'};
+  return{label:l,badge:'up',sub:`+${diff}d`};
+}
+
+function pmPool(){
+  if(fPM==='__none__')return tasks.filter(t=>!t.pm);
+  if(fPM!=='all')return tasks.filter(t=>t.pm===fPM);
+  return tasks;
 }
 
 function filtered(){
-  let r=[...tasks];
-  if(fPM==='__none__')r=r.filter(t=>!t.pm);
-  else if(fPM!=='all')r=r.filter(t=>t.pm===fPM);
+  let r=pmPool();
   if(fProject!=='all')r=r.filter(t=>t.project===fProject);
   if(fAssign!=='all')r=r.filter(t=>(t.assignedTo||'').toLowerCase()===fAssign.toLowerCase());
   if(fStatus==='overdue')r=r.filter(t=>isOv(t));
+  else if(fStatus==='today'){const td=today().getTime();r=r.filter(t=>t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t))}
+  else if(fStatus==='week'){const wk=new Date(today());wk.setDate(wk.getDate()+7);r=r.filter(t=>t.parsedDate&&t.parsedDate>=today()&&t.parsedDate<wk&&!(t.status||'').toLowerCase().includes('complet'))}
   else if(fStatus==='pending')r=r.filter(t=>!(t.status||'').toLowerCase().includes('complet'));
+
   return r;
 }
 
 function renderView(){
-  const arr=filtered();
-  const view=document.getElementById('view');
-  if(!tasks.length){view.innerHTML=`<div class="empty"><h3>No tasks loaded yet</h3><p>Enter your API key, add Google Sheet URLs above, then click "Load Dashboard"</p></div>`;return}
-  if(!arr.length){view.innerHTML=`<div class="empty"><h3>No tasks match these filters</h3><p>Try adjusting the filter options above</p></div>`;return}
+  const arr=filtered(),view=document.getElementById('view');
+  if(!tasks.length){view.innerHTML=`<div class="empty"><h3>No tasks loaded yet</h3><p>Enter your API key, add Google Sheet URLs, then click Load</p></div>`;return}
+  if(!arr.length){view.innerHTML=`<div class="empty"><h3>No tasks match these filters</h3></div>`;return}
   view.innerHTML=groupTasks(arr).map(([k,ts])=>{
     const m=grpMeta(k);
     return`<div class="grp"><div class="grp-hdr"><span class="grp-date">${m.label}</span><span class="grp-badge ${m.badge}">${m.sub}</span><span class="grp-ct">${ts.length} task${ts.length!==1?'s':''}</span><div class="grp-line"></div></div>${ts.map(renderCard).join('')}</div>`;
@@ -458,27 +469,32 @@ function updateKPIs(){
   document.getElementById('kTotal').textContent=arr.length||'—';
   document.getElementById('kOv').textContent=arr.filter(isOv).length||'—';
   document.getElementById('kTd').textContent=arr.filter(x=>x.parsedDate&&midnight(x.parsedDate).getTime()===td&&!isOv(x)).length||'—';
+  const weekEnd=new Date(today());weekEnd.setDate(weekEnd.getDate()+7);
+  document.getElementById('kWeek').textContent=arr.filter(x=>x.parsedDate&&x.parsedDate>=today()&&x.parsedDate<weekEnd&&!(x.status||'').toLowerCase().includes('complet')).length||'—';
   document.getElementById('kDone').textContent=arr.filter(x=>(x.status||'').toLowerCase().includes('complet')).length||'—';
+
   document.getElementById('ts').textContent=`Updated ${new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
 }
 
 function updateProjectDropdown(){
   const sel=document.getElementById('projSelect');
-  const projects=[...new Set(tasks.map(t=>t.project).filter(Boolean))].sort();
+  // Only show projects belonging to the selected PM
+  const pool=pmPool();
+  const projects=[...new Set(pool.map(t=>t.project).filter(Boolean))].sort();
   const prev=sel.value;
-  sel.innerHTML=`<option value="all">All Projects</option>`+projects.map(p=>`<option value="${h(p)}" ${prev===p?'selected':''}>${h(p)}</option>`).join('');
+  sel.innerHTML=`<option value="all">All Projects</option>`+projects.map(p=>{
+    const isRisk=tasks.some(t=>t.project===p&&t.risk==='high');
+    return`<option value="${h(p)}" ${prev===p?'selected':''}>${isRisk?'⚠ ':''}${h(p)}</option>`;
+  }).join('');
   if(!projects.includes(prev)){sel.value='all';fProject='all';}
 }
 
 function renderAssigneeRow(){
-  const pool=fProject==='all'?tasks:tasks.filter(t=>t.project===fProject);
+  const pool=fProject==='all'?pmPool():pmPool().filter(t=>t.project===fProject);
   const assignees=[...new Set(pool.map(t=>(t.assignedTo||'').trim()).filter(Boolean))].sort();
   if(fAssign!=='all'&&!assignees.some(a=>a.toLowerCase()===fAssign.toLowerCase()))fAssign='all';
   let html=`<span class="flabel">Assignee</span><button class="fb ${fAssign==='all'?'on c-all':''}" onclick="setAssignee(this)" data-a="all">All</button>`;
-  assignees.forEach(a=>{
-    const active=fAssign.toLowerCase()===a.toLowerCase();
-    html+=`<button class="fb ${active?'on c-all':''}" onclick="setAssignee(this)" data-a="${h(a.toLowerCase())}">${h(a)}</button>`;
-  });
+  assignees.forEach(a=>{html+=`<button class="fb ${fAssign.toLowerCase()===a.toLowerCase()?'on c-all':''}" onclick="setAssignee(this)" data-a="${h(a.toLowerCase())}">${h(a)}</button>`});
   document.getElementById('assigneeRow').innerHTML=html;
 }
 
@@ -489,7 +505,7 @@ function renderRows(){
     <div class="srow">
       <input type="text" placeholder="Project name" value="${h(s.name)}" oninput="sheets[${i}].name=this.value">
       <input type="text" placeholder="https://docs.google.com/spreadsheets/d/…" value="${h(s.url)}" oninput="sheets[${i}].url=this.value">
-      <select onchange="sheets[${i}].ptype=this.value">${PROJECT_TYPES.map(p=>`<option value="${h(p.value)}" ${s.ptype===p.value?'selected':''}>${h(p.label)}</option>`).join('')}</select>
+              <select onchange="sheets[${i}].ptype=this.value">${PROJECT_TYPES.map(p=>`<option value="${h(p.value)}" ${s.ptype===p.value?'selected':''}>${h(p.label)}</option>`).join('')}</select>
       <select onchange="sheets[${i}].pm=this.value">${PMs.map(p=>`<option value="${p}" ${s.pm===p?'selected':''}>${p||'— No PM —'}</option>`).join('')}</select>
       <span class="stag ${s.st}">${s.st==='loading'?'<span class="spin"></span>':s.st==='ok'?'✓ Updated':s.st==='cached'?'↩ No changes':s.st==='err'?'✕ Error':'Idle'}</span>
       <button class="btn del" onclick="removeRow(${i})">✕</button>
@@ -499,25 +515,56 @@ function renderRows(){
 function addRow(){sheets.push({uid:uid(),name:'',url:'',pm:'',ptype:'',st:'idle'});renderRows()}
 function removeRow(i){const rm=sheets.splice(i,1)[0];tasks=tasks.filter(t=>t._uid!==rm.uid);delete cache[rm.uid];renderRows();refresh();}
 function toggleMgr(){mgrOpen=!mgrOpen;document.getElementById('mgrBody').style.display=mgrOpen?'':'none';document.getElementById('mgrChev').textContent=mgrOpen?'▲':'▼';}
-
 function setPM(btn){
   document.querySelectorAll('[data-pm]').forEach(b=>b.classList.remove('on','c-all','c-wl','c-mi','c-ch'));
-  btn.classList.add('on');
-  const v=btn.dataset.pm;
+  btn.classList.add('on');const v=btn.dataset.pm;
   btn.classList.add(v==='Weeliem'?'c-wl':v==='Mimi'?'c-mi':v==='Charmaine'?'c-ch':'c-all');
-  fPM=v;refresh();
+  fPM=v;fProject='all';refresh();
 }
-function setStatus(btn){
-  document.querySelectorAll('[data-f]').forEach(b=>b.classList.remove('on','c-all'));
-  btn.classList.add('on','c-all');fStatus=btn.dataset.f;refresh();
-}
+function setStatus(btn){document.querySelectorAll('[data-f]').forEach(b=>b.classList.remove('on','c-all','c-risk'));btn.classList.add('on');btn.dataset.f==='risk'?btn.classList.add('c-risk'):btn.classList.add('c-all');fStatus=btn.dataset.f;refresh();}
 function setProject(val){fProject=val;fAssign='all';refresh();}
-function setAssignee(btn){
-  document.getElementById('assigneeRow').querySelectorAll('.fb').forEach(b=>b.classList.remove('on','c-all'));
-  btn.classList.add('on','c-all');fAssign=btn.dataset.a;refresh();
-}
+function setAssignee(btn){document.getElementById('assigneeRow').querySelectorAll('.fb').forEach(b=>b.classList.remove('on','c-all'));btn.classList.add('on','c-all');fAssign=btn.dataset.a;refresh();}
 
 renderRows();renderView();
+
+/* ── Auto-load logic ── */
+// After login, auto-load if sheets are configured and data is stale (not loaded today)
+function checkAutoLoad(){
+  if(!apiKey||!sheets.some(s=>s.url.trim()))return;
+  const lastLoad=sessionStorage.getItem('z21_lastLoad');
+  const todayStr=new Date().toDateString();
+  if(lastLoad!==todayStr){
+    console.log('Auto-loading — data stale or not yet loaded today');
+    loadAll();
+  }
+}
+
+// Patch loadAll to record last load date
+const _origLoadAll=loadAll;
+window.loadAll=async function(){
+  await _origLoadAll();
+  sessionStorage.setItem('z21_lastLoad',new Date().toDateString());
+};
+
+// Watch for midnight — if tab is left open, auto-refresh when clock ticks past 12am
+function startMidnightWatcher(){
+  setInterval(()=>{
+    const now=new Date();
+    if(now.getHours()===0&&now.getMinutes()===0&&now.getSeconds()<30){
+      console.log('Midnight — auto-refreshing dashboard');
+      sessionStorage.removeItem('z21_lastLoad'); // force fresh load
+      if(apiKey&&sheets.some(s=>s.url.trim()))loadAll();
+    }
+  },20000); // check every 20 seconds
+}
+
+// Patch doLogin to trigger auto-load after login
+const _origDoLogin=doLogin;
+window.doLogin=async function(){
+  await _origDoLogin();
+  // Small delay to let session restore complete
+  setTimeout(()=>{checkAutoLoad();startMidnightWatcher();},300);
+};
 </script>
 </body>
 </html>
