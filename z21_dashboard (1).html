@@ -349,6 +349,8 @@ function parseRows(rows,tab){
     const r=rows[i];
     const task=String(r[iTask]||'').trim();
     if(!task||task==='Items')continue;
+    const rawStatus=String(r[iStatus]||'').trim().toLowerCase();
+    if(rawStatus.includes('no action required')||rawStatus.includes('not required'))continue;
     out.push({tab,phase:String(r[iPhase]||'').trim(),task,
       dueDate:String(iDue>=0&&r[iDue]!=null?r[iDue]:'').trim(),
       assignedTo:String(r[iAssign]||'').trim(),
