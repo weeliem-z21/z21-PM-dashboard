@@ -356,10 +356,11 @@ function parseRows(rows,tab){
   }
   return out;
 }
+const ALLOWED_TABS=['Onboarding','UI/UX & Development'];
+
 async function fetchSheet(s){
   const fid=extractId(s.url);if(!fid)throw new Error('Invalid URL');
-  const tabs=await getTabNames(fid);
-  const results=await Promise.all(tabs.map(async tab=>{try{return parseRows(await getTabRows(fid,tab),tab)}catch{return[]}}));
+  const results=await Promise.all(ALLOWED_TABS.map(async tab=>{try{return parseRows(await getTabRows(fid,tab),tab)}catch{return[]}}));
   return results.flat();
 }
 
