@@ -8,8 +8,6 @@
 :root{--bg:#0d1117;--sf:#161b22;--sf2:#21262d;--bd:#30363d;--tx:#c9d1d9;--muted:#8b949e;--blue:#58a6ff;--red:#f85149;--amber:#d29922;--green:#3fb950;--purple:#bc8cff;--teal:#39d353;--pink:#f778ba;--orange:#ffa657}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);font-size:14px;min-height:100vh}
-
-/* ── Login ── */
 #loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh}
 .login-box{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:40px;width:100%;max-width:380px;text-align:center}
 .login-logo{display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
@@ -19,8 +17,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .login-box button{width:100%;padding:11px;border-radius:8px;border:none;background:var(--blue);color:#000;font-weight:700;font-size:14px;cursor:pointer}
 .login-box button:hover{opacity:.85}
 .login-err{font-size:12px;color:var(--red);margin-top:10px;min-height:18px}
-
-/* ── App ── */
 #app{display:none}
 .hdr{padding:14px 24px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg);z-index:10}
 .hdr h1{font-size:15px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
@@ -36,8 +32,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn.del:hover{background:rgba(248,81,73,.1)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 .main{padding:20px 24px;max-width:1280px;margin:0 auto}
-
-/* ── Manager ── */
 .mgr{background:var(--sf);border:1px solid var(--bd);border-radius:10px;margin-bottom:18px;overflow:hidden}
 .mgr-head{padding:11px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;font-size:13px;font-weight:600}
 .mgr-head:hover{background:var(--sf2)}
@@ -62,16 +56,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stag.idle{background:var(--sf2);color:var(--muted)}
 .stag.cached{background:rgba(57,211,83,.08);color:#4a9a55;border:1px solid rgba(57,211,83,.2)}
 .mgr-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid var(--bd)}
-
-/* ── KPI ── */
 .kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
 .kpi{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:16px}
-.kpi.risk-kpi{border-color:rgba(248,81,73,.35);background:rgba(248,81,73,.04)}
 .kpi-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
 .kpi-v{font-size:30px;font-weight:800;line-height:1}
-.kpi-v.blue{color:var(--blue)}.kpi-v.red{color:var(--red)}.kpi-v.amber{color:var(--amber)}.kpi-v.green{color:var(--green)}.kpi-v.orange{color:var(--orange)}
-
-/* ── Filters ── */
+.kpi-v.blue{color:var(--blue)}.kpi-v.red{color:var(--red)}.kpi-v.amber{color:var(--amber)}.kpi-v.green{color:var(--green)}
 .filter-section{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:12px 16px;margin-bottom:16px;display:flex;flex-direction:column;gap:10px}
 .frow{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .flabel{font-size:11px;color:var(--muted);min-width:64px;font-weight:500;flex-shrink:0}
@@ -81,11 +70,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .fb.on.c-wl{background:rgba(210,153,34,.15);color:var(--amber);border-color:var(--amber);font-weight:600}
 .fb.on.c-mi{background:rgba(247,120,186,.15);color:var(--pink);border-color:var(--pink);font-weight:600}
 .fb.on.c-ch{background:rgba(57,211,83,.15);color:var(--teal);border-color:var(--teal);font-weight:600}
-.fb.on.c-risk{background:rgba(248,81,73,.15);color:var(--red);border-color:var(--red);font-weight:600}
 .fselect{padding:5px 10px;border-radius:20px;border:1px solid var(--bd);background:var(--sf2);color:var(--tx);font-size:12px;outline:none;cursor:pointer;min-width:190px}
 .fselect option{background:var(--sf2)}
-
-/* ── Groups ── */
 .grp{margin-bottom:22px}
 .grp-hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .grp-date{font-size:13px;font-weight:700}
@@ -96,15 +82,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .grp-badge.nd{background:var(--sf2);color:var(--muted)}
 .grp-ct{font-size:11px;color:var(--muted)}
 .grp-line{flex:1;height:1px;background:var(--bd)}
-
-/* ── Task Card ── */
 .card{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:11px 14px;margin-bottom:6px;display:grid;grid-template-columns:8px 1fr auto auto;gap:10px;align-items:center;transition:border-color .15s}
 .card:hover{border-color:rgba(88,166,255,.4)}
 .card.ov-card{border-left:3px solid var(--red)}
 .card.ip-card{border-left:3px solid var(--blue)}
 .card.done-card{opacity:.45}
-.card.risk-card{border-color:rgba(248,81,73,.3);background:rgba(248,81,73,.03)}
-.card.risk-card.ov-card{border-left:3px solid var(--red)}
 .pdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .tinfo{min-width:0}
 .tname{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -123,7 +105,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tag.pt-rd{background:rgba(188,140,255,.1);color:var(--purple)}
 .tag.pt-mg{background:rgba(57,211,83,.1);color:var(--teal)}
 .tag.pt-mt{background:rgba(139,148,158,.1);color:var(--muted)}
-.tag.risk{background:rgba(248,81,73,.15);color:var(--red);font-weight:700}
 .asgn{font-size:11px;padding:3px 8px;border-radius:4px;background:var(--sf2);color:var(--muted);white-space:nowrap}
 .sbadge{font-size:10px;padding:3px 9px;border-radius:10px;font-weight:600;white-space:nowrap}
 .sbadge.ov{background:rgba(248,81,73,.15);color:var(--red)}
@@ -141,7 +122,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .sum-item-name{color:var(--tx)}
 .sum-item-proj{color:var(--purple);font-size:11px}
 .sum-item-date{color:var(--muted);font-size:11px;margin-left:auto;white-space:nowrap}
-.sum-none{font-size:12px;color:var(--muted);font-style:italic}padding:60px 20px;color:var(--muted)}
+.sum-none{font-size:12px;color:var(--muted);font-style:italic}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
 .empty h3{font-size:15px;color:var(--tx);margin-bottom:8px}
 .spin{display:inline-block;width:12px;height:12px;border:2px solid rgba(88,166,255,.3);border-top-color:var(--blue);border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;margin-right:4px}
 @keyframes sp{to{transform:rotate(360deg)}}
@@ -149,7 +131,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </head>
 <body>
 
-<!-- Login -->
 <div id="loginScreen">
   <div class="login-box">
     <div class="login-logo">
@@ -163,7 +144,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- App -->
 <div id="app">
   <div class="hdr">
     <h1>
@@ -208,7 +188,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="kpi"><div class="kpi-l">Due Today</div><div class="kpi-v amber" id="kTd">—</div></div>
       <div class="kpi"><div class="kpi-l">Due This Week</div><div class="kpi-v blue" id="kWeek">—</div></div>
       <div class="kpi"><div class="kpi-l">Completed</div><div class="kpi-v green" id="kDone">—</div></div>
-
     </div>
 
     <div class="filter-section">
@@ -227,7 +206,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <button class="fb" data-f="today" onclick="setStatus(this)">Due today</button>
         <button class="fb" data-f="week" onclick="setStatus(this)">Due this week</button>
         <button class="fb" data-f="pending" onclick="setStatus(this)">Hide completed</button>
-
       </div>
       <div class="frow">
         <span class="flabel">Project</span>
@@ -241,7 +219,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
     </div>
 
-    <!-- Summary -->
     <div class="summary-box" id="summaryBox">
       <div class="summary-head" onclick="toggleSummary()">
         <span>📋 Summary</span>
@@ -255,26 +232,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
-/* ── Auth ── */
 const STORED='ZWpJeGMzUjFaR2x2';
-async function doLogin(){
-  const val=document.getElementById('pwInput').value;
-  const err=document.getElementById('loginErr');
-  if(btoa(btoa(val))===STORED){
-    document.getElementById('loginScreen').style.display='none';
-    document.getElementById('app').style.display='block';
-    err.textContent='';
-    const savedKey=sessionStorage.getItem('z21_key');
-    if(savedKey){document.getElementById('apiKeyInput').value=savedKey;apiKey=savedKey;document.getElementById('keyStatus').textContent='Key set ✓';document.getElementById('keyStatus').className='key-ok';}
-    const savedSheets=sessionStorage.getItem('z21_sheets');
-    if(savedSheets){try{sheets=JSON.parse(savedSheets);renderRows();}catch(e){}}
-  }else{
-    err.textContent='Incorrect password';
-    document.getElementById('pwInput').value='';
-  }
-}
-
-/* ── Constants ── */
 const PMs=['','Weeliem','Mimi','Charmaine'];
 const PM_CLS={Weeliem:'pm-wl',Mimi:'pm-mi',Charmaine:'pm-ch'};
 const PROJECT_TYPES=[
@@ -287,7 +245,7 @@ const PROJECT_TYPES=[
   {value:'Other',label:'Other'}
 ];
 const PT_CLS={'Website Build':'pt-wb','Cloning':'pt-cl','Redesign':'pt-rd','Migration':'pt-mg','Maintenance':'pt-mt'};
-
+const ALLOWED_TABS=['Onboarding','UI/UX & Development'];
 
 let apiKey='';
 let sheets=[{uid:uid(),name:'',url:'',pm:'',ptype:'',st:'idle'}];
@@ -299,6 +257,24 @@ function uid(){return Math.random().toString(36).slice(2,10)}
 function extractId(url){const m=url.match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]+)/);return m?m[1]:null}
 function h(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
+function doLogin(){
+  const val=document.getElementById('pwInput').value;
+  const err=document.getElementById('loginErr');
+  if(btoa(btoa(val))===STORED){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('app').style.display='block';
+    err.textContent='';
+    const savedKey=sessionStorage.getItem('z21_key');
+    if(savedKey){document.getElementById('apiKeyInput').value=savedKey;apiKey=savedKey;document.getElementById('keyStatus').textContent='Key set ✓';document.getElementById('keyStatus').className='key-ok';}
+    const savedSheets=sessionStorage.getItem('z21_sheets');
+    if(savedSheets){try{sheets=JSON.parse(savedSheets);renderRows();}catch(e){}}
+    setTimeout(function(){checkAutoLoad();startMidnightWatcher();},300);
+  }else{
+    err.textContent='Incorrect password';
+    document.getElementById('pwInput').value='';
+  }
+}
+
 function onKeyInput(){
   apiKey=document.getElementById('apiKeyInput').value.trim();
   document.getElementById('keyStatus').textContent=apiKey?'Key set ✓':'';
@@ -306,12 +282,11 @@ function onKeyInput(){
   sessionStorage.setItem('z21_key',apiKey);
 }
 
-/* ── Date / status ── */
 function parseDate(s){
   if(!s||typeof s!=='string')return null;
   s=s.trim();if(!s||s.includes('#'))return null;
   const m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  if(m){const[,d,mo,y]=m.map(Number);return new Date(y,mo-1,d)}
+  if(m){const d=parseInt(m[1]),mo=parseInt(m[2]),y=parseInt(m[3]);return new Date(y,mo-1,d)}
   const d=new Date(s);return isNaN(d.getTime())?null:d;
 }
 function midnight(d){const x=new Date(d);x.setHours(0,0,0,0);return x}
@@ -328,41 +303,35 @@ function statusInfo(t){
   if(s.includes('progress'))return{cls:'ip',label:'In Progress'};
   return{cls:'ns',label:'Not Started'};
 }
-function cardClass(t){
-  const{cls}=statusInfo(t);
-  const base=cls==='ov'?'card ov-card':cls==='ip'?'card ip-card':cls==='done'?'card done-card':'card';
-  return t.risk==='high'?base+' risk-card':base;
-}
+function cardClass(t){const c=statusInfo(t).cls;return c==='ov'?'card ov-card':c==='ip'?'card ip-card':c==='done'?'card done-card':'card'}
 function phaseClass(p){if(!p)return'';const l=p.toLowerCase();return l.includes('ui')||l.includes('ux')?'p-ui':l.includes('dev')?'p-dev':l.includes('data')?'p-data':l.includes('pay')?'p-pay':''}
-function phaseColor(p){return{'p-ui':'#58a6ff','p-dev':'#3fb950','p-data':'#d29922','p-pay':'#f85149'}[phaseClass(p)]||'#8b949e'}
+function phaseColor(p){return({'p-ui':'#58a6ff','p-dev':'#3fb950','p-data':'#d29922','p-pay':'#f85149'})[phaseClass(p)]||'#8b949e'}
+function normaliseAssignee(v){return v.toLowerCase().includes('z21')?'Z21 Team':v}
 
-/* ── Google Sheets API v4 ── */
 async function gFetch(url){
   const r=await fetch(url);
-  if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e?.error?.message||`HTTP ${r.status}`)}
+  if(!r.ok){const e=await r.json().catch(function(){return{}});throw new Error((e&&e.error&&e.error.message)||'HTTP '+r.status)}
   return r.json();
 }
 async function getModifiedTime(fileId){
-  try{const d=await gFetch(`https://www.googleapis.com/drive/v3/files/${fileId}?fields=modifiedTime&key=${apiKey}`);return d.modifiedTime||null}catch{return null}
-}
-async function getTabNames(fileId){
-  const d=await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}?fields=sheets.properties.title&key=${apiKey}`);
-  return(d.sheets||[]).map(s=>s.properties.title);
+  try{const d=await gFetch('https://www.googleapis.com/drive/v3/files/'+fileId+'?fields=modifiedTime&key='+apiKey);return d.modifiedTime||null}catch(e){return null}
 }
 async function getTabRows(fileId,tab){
-  const d=await gFetch(`https://sheets.googleapis.com/v4/spreadsheets/${fileId}/values/${encodeURIComponent("'"+tab+"'")}?key=${apiKey}`);
+  const d=await gFetch('https://sheets.googleapis.com/v4/spreadsheets/'+fileId+'/values/'+encodeURIComponent("'"+tab+"'")+'?key='+apiKey);
   return d.values||[];
 }
 function parseRows(rows,tab){
   let hi=-1;
-  for(let i=0;i<Math.min(15,rows.length);i++){if(rows[i].some(c=>String(c).trim()==='Items')){hi=i;break}}
+  for(let i=0;i<Math.min(15,rows.length);i++){if(rows[i].some(function(c){return String(c).trim()==='Items'})){hi=i;break}}
   if(hi===-1)return[];
-  const hdrs=rows[hi].map(c=>String(c).trim().toLowerCase());
-  const ci=k=>hdrs.findIndex(h=>h.includes(k));
+  const hdrs=rows[hi].map(function(c){return String(c).trim().toLowerCase()});
+  const ci=function(k){return hdrs.findIndex(function(h){return h.includes(k)})};
   const iPhase=ci('phase'),iTask=ci('items');
-  let iDue=hdrs.findIndex(h=>h==='deliver by (new)');
-  if(iDue===-1)iDue=hdrs.lastIndexOf(hdrs.find(h=>h.startsWith('deliver by'))||'__');
-  const iAssign=ci('assigned'),iStatus=ci('status');
+  let iDue=hdrs.findIndex(function(h){return h==='deliver by (new)'});
+  if(iDue===-1)iDue=hdrs.findIndex(function(h){return h==='new delivery date'});
+  if(iDue===-1)iDue=hdrs.lastIndexOf(hdrs.find(function(h){return h.startsWith('deliver by')})||'__');
+  const iAssign=hdrs.findIndex(function(h){return h.startsWith('assign')});
+  const iStatus=ci('status');
   if(iTask===-1)return[];
   const out=[];
   for(let i=hi+1;i<rows.length;i++){
@@ -371,81 +340,78 @@ function parseRows(rows,tab){
     if(!task||task==='Items')continue;
     const rawStatus=String(r[iStatus]||'').trim().toLowerCase();
     if(rawStatus.includes('no action required')||rawStatus.includes('not required'))continue;
-    out.push({tab,phase:String(r[iPhase]||'').trim(),task,
+    const rawAssign=String(r[iAssign]||'').trim();
+    out.push({tab:tab,phase:String(r[iPhase]||'').trim(),task:task,
       dueDate:String(iDue>=0&&r[iDue]!=null?r[iDue]:'').trim(),
-      assignedTo:String(r[iAssign]||'').trim(),
+      assignedTo:normaliseAssignee(rawAssign),
       status:String(r[iStatus]||'').trim()});
   }
   return out;
 }
-const ALLOWED_TABS=['Onboarding','UI/UX & Development'];
-
 async function fetchSheet(s){
   const fid=extractId(s.url);if(!fid)throw new Error('Invalid URL');
-  const results=await Promise.all(ALLOWED_TABS.map(async tab=>{try{return parseRows(await getTabRows(fid,tab),tab)}catch{return[]}}));
-  return results.flat();
+  const results=await Promise.all(ALLOWED_TABS.map(async function(tab){try{return parseRows(await getTabRows(fid,tab),tab)}catch(e){return[]}}));
+  return results.reduce(function(a,b){return a.concat(b)},[]);
 }
 
-/* ── Load ── */
 async function loadAll(){
   if(!apiKey){document.getElementById('apiKeyInput').focus();return}
-  const valid=sheets.filter(s=>s.url.trim());
+  const valid=sheets.filter(function(s){return s.url.trim()});
   if(!valid.length){if(!mgrOpen)toggleMgr();return}
   const btn=document.getElementById('rfBtn');
   btn.disabled=true;btn.textContent='↻ Loading…';
-  valid.forEach(s=>{s.st='loading';tasks=tasks.filter(t=>t._uid!==s.uid)});
+  valid.forEach(function(s){s.st='loading';tasks=tasks.filter(function(t){return t._uid!==s.uid})});
   renderRows();
-  await Promise.allSettled(valid.map(async s=>{
+  await Promise.allSettled(valid.map(async function(s){
     try{
       const fid=extractId(s.url);if(!fid)throw new Error('Invalid URL');
       const modTime=await getModifiedTime(fid);
       if(modTime&&cache[s.uid]&&cache[s.uid].modifiedTime===modTime){
-        tasks.push(...cache[s.uid].tasks);s.st='cached';
+        tasks=tasks.concat(cache[s.uid].tasks);s.st='cached';
       }else{
         const raw=await fetchSheet(s);
-        const mapped=raw.map(t=>({...t,project:s.name||fid,pm:s.pm,ptype:s.ptype,_uid:s.uid,parsedDate:parseDate(t.dueDate)}));
+        const mapped=raw.map(function(t){return Object.assign({},t,{project:s.name||fid,pm:s.pm,ptype:s.ptype,_uid:s.uid,parsedDate:parseDate(t.dueDate)})});
         cache[s.uid]={modifiedTime:modTime,tasks:mapped};
-        tasks.push(...mapped);s.st='ok';
+        tasks=tasks.concat(mapped);s.st='ok';
       }
     }catch(e){s.st='err';console.error(s.name||s.url,e.message)}
     renderRows();
   }));
   btn.disabled=false;btn.textContent='↻ Refresh';
-  sessionStorage.setItem('z21_sheets',JSON.stringify(sheets.map(s=>({...s,st:'idle'}))));
+  sessionStorage.setItem('z21_sheets',JSON.stringify(sheets.map(function(s){return Object.assign({},s,{st:'idle'})})));
+  sessionStorage.setItem('z21_lastLoad',new Date().toDateString());
   refresh();
   if(tasks.length&&mgrOpen)toggleMgr();
 }
 
-/* ── Render ── */
 function renderCard(t){
   const si=statusInfo(t);
   const pd=t.parsedDate?t.parsedDate.toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'';
-  return`<div class="${cardClass(t)}">
-    <div class="pdot" style="background:${phaseColor(t.phase)}"></div>
-    <div class="tinfo">
-      <div class="tname">${h(t.task)}</div>
-      <div class="tmeta">
-        <span class="tag proj">${h(t.project)}</span>
-        ${t.risk==='high'?'<span class="tag risk">⚠ High Risk</span>':''}
-        ${t.ptype?`<span class="tag ${PT_CLS[t.ptype]||''}">${h(t.ptype)}</span>`:''}
-        ${t.pm?`<span class="tag ${PM_CLS[t.pm]||''}">${h(t.pm)}</span>`:''}
-        ${t.phase?`<span class="tag ${phaseClass(t.phase)}">${h(t.phase)}</span>`:''}
-        ${t.tab?`<span class="tag">${h(t.tab)}</span>`:''}
-        ${pd?`<span class="tag">📅 ${pd}</span>`:''}
-      </div>
-    </div>
-    <span class="asgn">${h(t.assignedTo||'—')}</span>
-    <span class="sbadge ${si.cls}">${si.label}</span>
-  </div>`;
+  return '<div class="'+cardClass(t)+'">'+
+    '<div class="pdot" style="background:'+phaseColor(t.phase)+'"></div>'+
+    '<div class="tinfo">'+
+      '<div class="tname">'+h(t.task)+'</div>'+
+      '<div class="tmeta">'+
+        '<span class="tag proj">'+h(t.project)+'</span>'+
+        (t.ptype?'<span class="tag '+(PT_CLS[t.ptype]||'')+'">'+h(t.ptype)+'</span>':'')+
+        (t.pm?'<span class="tag '+(PM_CLS[t.pm]||'')+'">'+h(t.pm)+'</span>':'')+
+        (t.phase?'<span class="tag '+phaseClass(t.phase)+'">'+h(t.phase)+'</span>':'')+
+        (t.tab?'<span class="tag">'+h(t.tab)+'</span>':'')+
+        (pd?'<span class="tag">📅 '+pd+'</span>':'')+
+      '</div>'+
+    '</div>'+
+    '<span class="asgn">'+h(t.assignedTo||'—')+'</span>'+
+    '<span class="sbadge '+si.cls+'">'+si.label+'</span>'+
+  '</div>';
 }
 
 function groupTasks(arr){
   const g={};
-  for(const t of arr){const k=isOv(t)?'__ov__':!t.parsedDate?'__nd__':midnight(t.parsedDate).getTime().toString();(g[k]=g[k]||[]).push(t)}
-  return Object.entries(g).sort(([a],[b])=>{
-    if(a==='__ov__')return-1;if(b==='__ov__')return 1;
-    if(a==='__nd__')return 1;if(b==='__nd__')return-1;
-    return parseInt(a)-parseInt(b);
+  arr.forEach(function(t){var k=isOv(t)?'__ov__':!t.parsedDate?'__nd__':midnight(t.parsedDate).getTime().toString();if(!g[k])g[k]=[];g[k].push(t)});
+  return Object.entries(g).sort(function(a,b){
+    if(a[0]==='__ov__')return-1;if(b[0]==='__ov__')return 1;
+    if(a[0]==='__nd__')return 1;if(b[0]==='__nd__')return-1;
+    return parseInt(a[0])-parseInt(b[0]);
   });
 }
 function grpMeta(k){
@@ -454,73 +420,60 @@ function grpMeta(k){
   const d=new Date(parseInt(k)),diff=Math.round((d.getTime()-today().getTime())/864e5);
   const s=d.toLocaleDateString('en-GB',{day:'numeric',month:'long'});
   const l=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-  if(diff===0)return{label:`Today — ${s}`,badge:'td',sub:'Today'};
-  if(diff===1)return{label:`Tomorrow — ${s}`,badge:'up',sub:'+1 day'};
-  return{label:l,badge:'up',sub:`+${diff}d`};
+  if(diff===0)return{label:'Today — '+s,badge:'td',sub:'Today'};
+  if(diff===1)return{label:'Tomorrow — '+s,badge:'up',sub:'+1 day'};
+  return{label:l,badge:'up',sub:'+'+diff+'d'};
 }
-
 function pmPool(){
-  if(fPM==='__none__')return tasks.filter(t=>!t.pm);
-  if(fPM!=='all')return tasks.filter(t=>t.pm===fPM);
+  if(fPM==='__none__')return tasks.filter(function(t){return!t.pm});
+  if(fPM!=='all')return tasks.filter(function(t){return t.pm===fPM});
   return tasks;
 }
-
 function filtered(){
-  let r=pmPool();
-  if(fProject!=='all')r=r.filter(t=>t.project===fProject);
-  if(fAssign!=='all')r=r.filter(t=>(t.assignedTo||'').toLowerCase()===fAssign.toLowerCase());
-  if(fStatus==='overdue')r=r.filter(t=>isOv(t));
-  else if(fStatus==='today'){const td=today().getTime();r=r.filter(t=>t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t))}
-  else if(fStatus==='week'){const wk=new Date(today());wk.setDate(wk.getDate()+7);r=r.filter(t=>t.parsedDate&&t.parsedDate>=today()&&t.parsedDate<wk&&!(t.status||'').toLowerCase().includes('complet'))}
-  else if(fStatus==='pending')r=r.filter(t=>!(t.status||'').toLowerCase().includes('complet'));
-
+  var r=pmPool();
+  if(fProject!=='all')r=r.filter(function(t){return t.project===fProject});
+  if(fAssign!=='all')r=r.filter(function(t){return(t.assignedTo||'').toLowerCase()===fAssign.toLowerCase()});
+  if(fStatus==='overdue')r=r.filter(isOv);
+  else if(fStatus==='today'){var td=today().getTime();r=r.filter(function(t){return t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t)})}
+  else if(fStatus==='week'){var wk=new Date(today());wk.setDate(wk.getDate()+7);r=r.filter(function(t){return t.parsedDate&&t.parsedDate>=today()&&t.parsedDate<wk&&!(t.status||'').toLowerCase().includes('complet')})}
+  else if(fStatus==='pending')r=r.filter(function(t){return!(t.status||'').toLowerCase().includes('complet')});
   return r;
 }
-
 function renderView(){
   const arr=filtered(),view=document.getElementById('view');
-  if(!tasks.length){view.innerHTML=`<div class="empty"><h3>No tasks loaded yet</h3><p>Enter your API key, add Google Sheet URLs, then click Load</p></div>`;return}
-  if(!arr.length){view.innerHTML=`<div class="empty"><h3>No tasks match these filters</h3></div>`;return}
-  view.innerHTML=groupTasks(arr).map(([k,ts])=>{
-    const m=grpMeta(k);
-    return`<div class="grp"><div class="grp-hdr"><span class="grp-date">${m.label}</span><span class="grp-badge ${m.badge}">${m.sub}</span><span class="grp-ct">${ts.length} task${ts.length!==1?'s':''}</span><div class="grp-line"></div></div>${ts.map(renderCard).join('')}</div>`;
+  if(!tasks.length){view.innerHTML='<div class="empty"><h3>No tasks loaded yet</h3><p>Enter your API key, add Google Sheet URLs, then click Load</p></div>';return}
+  if(!arr.length){view.innerHTML='<div class="empty"><h3>No tasks match these filters</h3></div>';return}
+  view.innerHTML=groupTasks(arr).map(function(e){
+    const k=e[0],ts=e[1],m=grpMeta(k);
+    return '<div class="grp"><div class="grp-hdr"><span class="grp-date">'+m.label+'</span><span class="grp-badge '+m.badge+'">'+m.sub+'</span><span class="grp-ct">'+ts.length+' task'+(ts.length!==1?'s':'')+'</span><div class="grp-line"></div></div>'+ts.map(renderCard).join('')+'</div>';
   }).join('');
 }
-
 function updateKPIs(){
   const arr=filtered(),td=today().getTime();
   document.getElementById('kTotal').textContent=arr.length||'—';
   document.getElementById('kOv').textContent=arr.filter(isOv).length||'—';
-  document.getElementById('kTd').textContent=arr.filter(x=>x.parsedDate&&midnight(x.parsedDate).getTime()===td&&!isOv(x)).length||'—';
-  const weekEnd=new Date(today());weekEnd.setDate(weekEnd.getDate()+7);
-  document.getElementById('kWeek').textContent=arr.filter(x=>x.parsedDate&&x.parsedDate>=today()&&x.parsedDate<weekEnd&&!(x.status||'').toLowerCase().includes('complet')).length||'—';
-  document.getElementById('kDone').textContent=arr.filter(x=>(x.status||'').toLowerCase().includes('complet')).length||'—';
-
-  document.getElementById('ts').textContent=`Updated ${new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
+  document.getElementById('kTd').textContent=arr.filter(function(x){return x.parsedDate&&midnight(x.parsedDate).getTime()===td&&!isOv(x)}).length||'—';
+  const wkEnd=new Date(today());wkEnd.setDate(wkEnd.getDate()+7);
+  document.getElementById('kWeek').textContent=arr.filter(function(x){return x.parsedDate&&x.parsedDate>=today()&&x.parsedDate<wkEnd&&!(x.status||'').toLowerCase().includes('complet')}).length||'—';
+  document.getElementById('kDone').textContent=arr.filter(function(x){return(x.status||'').toLowerCase().includes('complet')}).length||'—';
+  document.getElementById('ts').textContent='Updated '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
 }
-
 function updateProjectDropdown(){
   const sel=document.getElementById('projSelect');
-  // Only show projects belonging to the selected PM
   const pool=pmPool();
-  const projects=[...new Set(pool.map(t=>t.project).filter(Boolean))].sort();
+  const projects=[...new Set(pool.map(function(t){return t.project}).filter(Boolean))].sort();
   const prev=sel.value;
-  sel.innerHTML=`<option value="all">All Projects</option>`+projects.map(p=>{
-    const isRisk=tasks.some(t=>t.project===p&&t.risk==='high');
-    return`<option value="${h(p)}" ${prev===p?'selected':''}>${isRisk?'⚠ ':''}${h(p)}</option>`;
-  }).join('');
+  sel.innerHTML='<option value="all">All Projects</option>'+projects.map(function(p){return'<option value="'+h(p)+'" '+(prev===p?'selected':'')+'>'+h(p)+'</option>'}).join('');
   if(!projects.includes(prev)){sel.value='all';fProject='all';}
 }
-
 function renderAssigneeRow(){
-  const pool=fProject==='all'?pmPool():pmPool().filter(t=>t.project===fProject);
-  const assignees=[...new Set(pool.map(t=>(t.assignedTo||'').trim()).filter(Boolean))].sort();
-  if(fAssign!=='all'&&!assignees.some(a=>a.toLowerCase()===fAssign.toLowerCase()))fAssign='all';
-  let html=`<span class="flabel">Assignee</span><button class="fb ${fAssign==='all'?'on c-all':''}" onclick="setAssignee(this)" data-a="all">All</button>`;
-  assignees.forEach(a=>{html+=`<button class="fb ${fAssign.toLowerCase()===a.toLowerCase()?'on c-all':''}" onclick="setAssignee(this)" data-a="${h(a.toLowerCase())}">${h(a)}</button>`});
+  const pool=fProject==='all'?pmPool():pmPool().filter(function(t){return t.project===fProject});
+  const assignees=[...new Set(pool.map(function(t){return(t.assignedTo||'').trim()}).filter(Boolean))].sort();
+  if(fAssign!=='all'&&!assignees.some(function(a){return a.toLowerCase()===fAssign.toLowerCase()}))fAssign='all';
+  let html='<span class="flabel">Assignee</span><button class="fb '+(fAssign==='all'?'on c-all':'')+'" onclick="setAssignee(this)" data-a="all">All</button>';
+  assignees.forEach(function(a){html+='<button class="fb '+(fAssign.toLowerCase()===a.toLowerCase()?'on c-all':'')+'" onclick="setAssignee(this)" data-a="'+h(a.toLowerCase())+'">'+h(a)+'</button>'});
   document.getElementById('assigneeRow').innerHTML=html;
 }
-
 function toggleSummary(){
   const body=document.getElementById('summaryBody');
   const chev=document.getElementById('summaryChev');
@@ -528,109 +481,106 @@ function toggleSummary(){
   body.style.display=open?'flex':'none';
   chev.textContent=open?'▲':'▼';
 }
-
 function renderSummary(){
   const arr=filtered();
   const td=today().getTime();
   const weekEnd=new Date(today());weekEnd.setDate(weekEnd.getDate()+7);
-
-  const overdue=arr.filter(t=>isOv(t)).sort((a,b)=>(a.parsedDate||0)-(b.parsedDate||0));
-  const dueToday=arr.filter(t=>t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t));
-  const dueWeek=arr.filter(t=>t.parsedDate&&t.parsedDate>today()&&t.parsedDate<weekEnd&&!(t.status||'').toLowerCase().includes('complet'))
-                   .sort((a,b)=>a.parsedDate-b.parsedDate);
-
+  const overdue=arr.filter(isOv).sort(function(a,b){return(a.parsedDate||0)-(b.parsedDate||0)});
+  const dueToday=arr.filter(function(t){return t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t)});
+  const dueWeek=arr.filter(function(t){return t.parsedDate&&t.parsedDate>today()&&t.parsedDate<weekEnd&&!(t.status||'').toLowerCase().includes('complet')}).sort(function(a,b){return a.parsedDate-b.parsedDate});
+  function fmtD(d){return d?d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'-'}
   function listItems(items){
-    if(!items.length)return`<p class="sum-none">None</p>`;
-    return`<ul>${items.map(t=>`
-      <li>
-        <span class="sum-item-name">${h(t.task)}</span>
-        <span class="sum-item-proj">${h(t.project)}</span>
-        <span class="sum-item-date">${t.parsedDate?t.parsedDate.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'-'}</span>
-      </li>`).join('')}</ul>`;
+    if(!items.length)return'<p class="sum-none">None</p>';
+    return'<ul>'+items.map(function(t){return'<li><span class="sum-item-name">'+h(t.task)+'</span><span class="sum-item-proj">'+h(t.assignedTo||'—')+'</span><span class="sum-item-date">'+fmtD(t.parsedDate)+'</span></li>'}).join('')+'</ul>';
   }
-
-  document.getElementById('summaryBody').innerHTML=`
-    <div class="sum-section">
-      <h4>🔴 What is overdue</h4>
-      ${listItems(overdue)}
-    </div>
-    <div class="sum-section">
-      <h4>🟡 What's due today</h4>
-      ${listItems(dueToday)}
-    </div>
-    <div class="sum-section">
-      <h4>🔵 What's due this week</h4>
-      ${listItems(dueWeek)}
-    </div>`;
+  document.getElementById('summaryBody').innerHTML=
+    '<div class="sum-section"><h4>🔴 What is overdue</h4>'+listItems(overdue)+'</div>'+
+    '<div class="sum-section"><h4>🟡 What\'s due today</h4>'+listItems(dueToday)+'</div>'+
+    '<div class="sum-section"><h4>🔵 What\'s due this week</h4>'+listItems(dueWeek)+'</div>'+
+    '<div style="padding-top:12px;border-top:1px solid var(--bd)"><button class="btn" onclick="copySummary()" id="copyBtn" style="font-size:12px">📋 Copy for WhatsApp</button></div>';
 }
-
+function copySummary(){
+  const arr=filtered();
+  const td=today().getTime();
+  const weekEnd=new Date(today());weekEnd.setDate(weekEnd.getDate()+7);
+  const overdue=arr.filter(isOv).sort(function(a,b){return(a.parsedDate||0)-(b.parsedDate||0)});
+  const dueToday=arr.filter(function(t){return t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t)});
+  const dueWeek=arr.filter(function(t){return t.parsedDate&&t.parsedDate>today()&&t.parsedDate<weekEnd&&!(t.status||'').toLowerCase().includes('complet')}).sort(function(a,b){return a.parsedDate-b.parsedDate});
+  function fmtD(d){return d?d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'—'}
+  function sec(emoji,title,items){
+    if(!items.length)return emoji+' '+title+'\nNone\n';
+    return emoji+' '+title+'\n'+items.map(function(t){return'• '+t.task+' ('+( t.assignedTo||'—')+') - '+fmtD(t.parsedDate)}).join('\n')+'\n';
+  }
+  // Group by project
+  const allProjects=[...new Set(arr.map(function(t){return t.project}).filter(Boolean))].sort();
+  let text='';
+  allProjects.forEach(function(proj){
+    const pArr=arr.filter(function(t){return t.project===proj});
+    const pOv=pArr.filter(isOv).sort(function(a,b){return(a.parsedDate||0)-(b.parsedDate||0)});
+    const pTd=pArr.filter(function(t){return t.parsedDate&&midnight(t.parsedDate).getTime()===td&&!isOv(t)});
+    const pWk=pArr.filter(function(t){return t.parsedDate&&t.parsedDate>today()&&t.parsedDate<weekEnd&&!(t.status||'').toLowerCase().includes('complet')}).sort(function(a,b){return a.parsedDate-b.parsedDate});
+    if(!pOv.length&&!pTd.length&&!pWk.length)return;
+    text+='['+proj+']\n\n';
+    text+=sec('🔴','What is overdue',pOv);
+    text+=sec('🟡',"What's due today",pTd);
+    text+=sec('🔵',"What's due this week",pWk);
+    text+='\n';
+  });
+  navigator.clipboard.writeText(text.trim()).then(function(){
+    const btn=document.getElementById('copyBtn');
+    btn.textContent='✓ Copied!';btn.style.color='var(--green)';
+    setTimeout(function(){btn.textContent='📋 Copy for WhatsApp';btn.style.color='';},2500);
+  }).catch(function(){
+    const ta=document.createElement('textarea');
+    ta.value=text.trim();ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    const btn=document.getElementById('copyBtn');
+    btn.textContent='✓ Copied!';
+    setTimeout(function(){btn.textContent='📋 Copy for WhatsApp';},2500);
+  });
+}
 function refresh(){updateProjectDropdown();renderAssigneeRow();updateKPIs();renderSummary();renderView();}
-
 function renderRows(){
-  document.getElementById('sRows').innerHTML=sheets.map((s,i)=>`
-    <div class="srow">
-      <input type="text" placeholder="Project name" value="${h(s.name)}" oninput="sheets[${i}].name=this.value">
-      <input type="text" placeholder="https://docs.google.com/spreadsheets/d/…" value="${h(s.url)}" oninput="sheets[${i}].url=this.value">
-              <select onchange="sheets[${i}].ptype=this.value">${PROJECT_TYPES.map(p=>`<option value="${h(p.value)}" ${s.ptype===p.value?'selected':''}>${h(p.label)}</option>`).join('')}</select>
-      <select onchange="sheets[${i}].pm=this.value">${PMs.map(p=>`<option value="${p}" ${s.pm===p?'selected':''}>${p||'— No PM —'}</option>`).join('')}</select>
-      <span class="stag ${s.st}">${s.st==='loading'?'<span class="spin"></span>':s.st==='ok'?'✓ Updated':s.st==='cached'?'↩ No changes':s.st==='err'?'✕ Error':'Idle'}</span>
-      <button class="btn del" onclick="removeRow(${i})">✕</button>
-    </div>`).join('');
+  document.getElementById('sRows').innerHTML=sheets.map(function(s,i){return(
+    '<div class="srow">'+
+    '<input type="text" placeholder="Project name" value="'+h(s.name)+'" oninput="sheets['+i+'].name=this.value">'+
+    '<input type="text" placeholder="https://docs.google.com/spreadsheets/d/…" value="'+h(s.url)+'" oninput="sheets['+i+'].url=this.value">'+
+    '<select onchange="sheets['+i+'].ptype=this.value">'+PROJECT_TYPES.map(function(p){return'<option value="'+h(p.value)+'" '+(s.ptype===p.value?'selected':'')+'>'+h(p.label)+'</option>'}).join('')+'</select>'+
+    '<select onchange="sheets['+i+'].pm=this.value">'+PMs.map(function(p){return'<option value="'+p+'" '+(s.pm===p?'selected':'')+'>'+(p||'— No PM —')+'</option>'}).join('')+'</select>'+
+    '<span class="stag '+s.st+'">'+(s.st==='loading'?'<span class="spin"></span>':s.st==='ok'?'✓ Updated':s.st==='cached'?'↩ No changes':s.st==='err'?'✕ Error':'Idle')+'</span>'+
+    '<button class="btn del" onclick="removeRow('+i+')">✕</button>'+
+    '</div>'
+  )}).join('');
 }
-
 function addRow(){sheets.push({uid:uid(),name:'',url:'',pm:'',ptype:'',st:'idle'});renderRows()}
-function removeRow(i){const rm=sheets.splice(i,1)[0];tasks=tasks.filter(t=>t._uid!==rm.uid);delete cache[rm.uid];renderRows();refresh();}
+function removeRow(i){var rm=sheets.splice(i,1)[0];tasks=tasks.filter(function(t){return t._uid!==rm.uid});delete cache[rm.uid];renderRows();refresh();}
 function toggleMgr(){mgrOpen=!mgrOpen;document.getElementById('mgrBody').style.display=mgrOpen?'':'none';document.getElementById('mgrChev').textContent=mgrOpen?'▲':'▼';}
 function setPM(btn){
-  document.querySelectorAll('[data-pm]').forEach(b=>b.classList.remove('on','c-all','c-wl','c-mi','c-ch'));
-  btn.classList.add('on');const v=btn.dataset.pm;
+  document.querySelectorAll('[data-pm]').forEach(function(b){b.classList.remove('on','c-all','c-wl','c-mi','c-ch')});
+  btn.classList.add('on');var v=btn.dataset.pm;
   btn.classList.add(v==='Weeliem'?'c-wl':v==='Mimi'?'c-mi':v==='Charmaine'?'c-ch':'c-all');
   fPM=v;fProject='all';refresh();
 }
-function setStatus(btn){document.querySelectorAll('[data-f]').forEach(b=>b.classList.remove('on','c-all','c-risk'));btn.classList.add('on');btn.dataset.f==='risk'?btn.classList.add('c-risk'):btn.classList.add('c-all');fStatus=btn.dataset.f;refresh();}
+function setStatus(btn){document.querySelectorAll('[data-f]').forEach(function(b){b.classList.remove('on','c-all')});btn.classList.add('on','c-all');fStatus=btn.dataset.f;refresh();}
 function setProject(val){fProject=val;fAssign='all';refresh();}
-function setAssignee(btn){document.getElementById('assigneeRow').querySelectorAll('.fb').forEach(b=>b.classList.remove('on','c-all'));btn.classList.add('on','c-all');fAssign=btn.dataset.a;refresh();}
+function setAssignee(btn){document.getElementById('assigneeRow').querySelectorAll('.fb').forEach(function(b){b.classList.remove('on','c-all')});btn.classList.add('on','c-all');fAssign=btn.dataset.a;refresh();}
+
+function checkAutoLoad(){
+  if(!apiKey||!sheets.some(function(s){return s.url.trim()}))return;
+  var lastLoad=sessionStorage.getItem('z21_lastLoad');
+  if(lastLoad!==new Date().toDateString())loadAll();
+}
+function startMidnightWatcher(){
+  setInterval(function(){
+    var now=new Date();
+    if(now.getHours()===0&&now.getMinutes()===0&&now.getSeconds()<30){
+      sessionStorage.removeItem('z21_lastLoad');
+      if(apiKey&&sheets.some(function(s){return s.url.trim()}))loadAll();
+    }
+  },20000);
+}
 
 renderRows();renderView();
-
-/* ── Auto-load logic ── */
-// After login, auto-load if sheets are configured and data is stale (not loaded today)
-function checkAutoLoad(){
-  if(!apiKey||!sheets.some(s=>s.url.trim()))return;
-  const lastLoad=sessionStorage.getItem('z21_lastLoad');
-  const todayStr=new Date().toDateString();
-  if(lastLoad!==todayStr){
-    console.log('Auto-loading — data stale or not yet loaded today');
-    loadAll();
-  }
-}
-
-// Patch loadAll to record last load date
-const _origLoadAll=loadAll;
-window.loadAll=async function(){
-  await _origLoadAll();
-  sessionStorage.setItem('z21_lastLoad',new Date().toDateString());
-};
-
-// Watch for midnight — if tab is left open, auto-refresh when clock ticks past 12am
-function startMidnightWatcher(){
-  setInterval(()=>{
-    const now=new Date();
-    if(now.getHours()===0&&now.getMinutes()===0&&now.getSeconds()<30){
-      console.log('Midnight — auto-refreshing dashboard');
-      sessionStorage.removeItem('z21_lastLoad'); // force fresh load
-      if(apiKey&&sheets.some(s=>s.url.trim()))loadAll();
-    }
-  },20000); // check every 20 seconds
-}
-
-// Patch doLogin to trigger auto-load after login
-const _origDoLogin=doLogin;
-window.doLogin=async function(){
-  await _origDoLogin();
-  // Small delay to let session restore complete
-  setTimeout(()=>{checkAutoLoad();startMidnightWatcher();},300);
-};
 </script>
 </body>
 </html>
